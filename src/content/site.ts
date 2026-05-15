@@ -80,7 +80,7 @@ export const site = {
   quickLinks: {
     title: "Poznaj nas lepiej",
     description:
-      "Wszystkie szczegóły znajdziesz na naszej oficjalnej stronie matrymonialne24.pl.",
+      "Wszystkie szczegóły znajdziesz na stronie matrymonialne24.pl.",
     items: [
       { title: "Regulamin", href: "https://matrymonialne24.pl/regulamin/" },
       { title: "Skojarzone pary", href: "https://matrymonialne24.pl/skojarzone-pary/" },
