@@ -54,7 +54,7 @@ export function Hero() {
                 href={site.hero.primaryCta.href}
                 target="_blank"
                 rel="noopener"
-                className="group inline-flex min-h-[5rem] w-full items-center justify-center gap-2 rounded-full bg-[image:var(--brand-gradient)] px-7 py-4 text-base font-bold text-white shadow-[0_18px_40px_-20px_rgba(116,86,153,0.55),0_8px_20px_-10px_rgba(226,0,122,0.45)] transition will-change-transform hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-22px_rgba(116,86,153,0.7),0_12px_24px_-10px_rgba(226,0,122,0.6)] sm:min-h-0 sm:w-auto sm:text-lg"
+                className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-[image:var(--brand-gradient)] px-7 py-4 text-base font-bold text-white shadow-[0_18px_40px_-20px_rgba(116,86,153,0.55),0_8px_20px_-10px_rgba(226,0,122,0.45)] transition will-change-transform hover:-translate-y-0.5 hover:shadow-[0_24px_50px_-22px_rgba(116,86,153,0.7),0_12px_24px_-10px_rgba(226,0,122,0.6)] sm:w-auto sm:text-lg"
                 style={{ animation: "pulse-glow 3.4s ease-in-out infinite" }}
               >
                 {noOrphans(site.hero.primaryCta.label)}
@@ -63,12 +63,11 @@ export function Hero() {
 
               <a
                 href={site.hero.secondaryCta.href}
-                className="inline-flex min-h-[5rem] w-full items-center justify-center gap-3 rounded-full bg-white px-7 py-4 text-base font-bold text-brand-purple-deep ring-2 ring-brand-purple/30 transition hover:-translate-y-0.5 hover:bg-brand-purple/5 hover:ring-brand-pink/50 sm:min-h-0 sm:w-auto sm:text-lg"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-4 text-base font-bold text-brand-purple-deep ring-2 ring-brand-purple/30 transition hover:-translate-y-0.5 hover:bg-brand-purple/5 hover:ring-brand-pink/50 sm:w-auto sm:gap-3 sm:px-7 sm:text-lg"
               >
                 <Phone className="h-5 w-5 shrink-0 text-brand-pink" aria-hidden />
-                <span className="flex flex-col items-start leading-tight sm:flex-row sm:items-center sm:gap-2 sm:leading-normal">
-                  <span>{site.hero.secondaryCta.label}:</span>
-                  <span className="whitespace-nowrap">{site.contact.phone}</span>
+                <span className="whitespace-nowrap">
+                  {site.hero.secondaryCta.label}: {site.contact.phone}
                 </span>
               </a>
             </div>
@@ -76,9 +75,15 @@ export function Hero() {
 
           <Reveal delay={320}>
             <p className="mt-6 text-sm font-medium text-brand-gray sm:text-base">
-              {noOrphans(
-                `${site.contact.coverage} · ${site.brand.yearsExperience} lat doświadczenia · Pełna dyskrecja`,
-              )}
+              <span className="block sm:inline">
+                {noOrphans(
+                  `${site.contact.coverage} · ${site.brand.yearsExperience} lat doświadczenia`,
+                )}
+              </span>
+              <span className="hidden sm:inline"> · </span>
+              <span className="mt-1 block sm:mt-0 sm:inline">
+                {noOrphans("Pełna dyskrecja")}
+              </span>
             </p>
           </Reveal>
         </div>

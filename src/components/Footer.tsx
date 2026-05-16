@@ -12,17 +12,29 @@ export function Footer() {
       <Container>
         <div className="flex flex-col items-center gap-8 md:flex-row md:items-start md:justify-between md:gap-12">
           <div className="flex flex-col items-center gap-4 md:items-start">
-            <Image
-              src={asset("/Logo.svg")}
-              alt={`${site.brand.name} – logo`}
-              width={260}
-              height={64}
-              className="h-12 w-auto sm:h-14"
-            />
+            <a
+              href={`https://${site.brand.officialDomain}/`}
+              target="_blank"
+              rel="noopener"
+              className="transition hover:opacity-85"
+            >
+              <Image
+                src={asset("/Logo.svg")}
+                alt={`${site.brand.name} – logo`}
+                width={260}
+                height={64}
+                className="h-12 w-auto sm:h-14"
+              />
+            </a>
             <p className="max-w-sm text-center text-base text-brand-ink/70 md:text-left">
-              {noOrphans(
-                `${site.brand.yearsExperience} lat doświadczenia w kojarzeniu par. ${site.contact.coverage}.`,
-              )}
+              <span className="block sm:inline">
+                {noOrphans(
+                  `${site.brand.yearsExperience} lat doświadczenia w kojarzeniu par.`,
+                )}
+              </span>{" "}
+              <span className="mt-1 block sm:mt-0 sm:inline">
+                {noOrphans(site.contact.coverage)}.
+              </span>
             </p>
           </div>
 
@@ -46,7 +58,9 @@ export function Footer() {
         </div>
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-brand-purple/10 pt-6 text-sm text-brand-gray sm:flex-row">
-          <p>{noOrphans(`© ${year} ${site.brand.name}. Wszelkie prawa zastrzeżone.`)}</p>
+          <p className="w-full text-center sm:w-auto sm:text-left">
+            {noOrphans(`© ${year} ${site.brand.name}. Wszelkie prawa zastrzeżone.`)}
+          </p>
           <p>
             <span className="font-semibold text-brand-purple-deep">{site.brand.domain}</span>
           </p>

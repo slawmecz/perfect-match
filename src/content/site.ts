@@ -73,7 +73,7 @@ export const site = {
       href: "https://matrymonialne24.pl/ankieta/",
     },
     secondaryCta: {
-      label: "Zobacz pełną ofertę",
+      label: "Zobacz przykładowe oferty",
       href: "https://matrymonialne24.pl/",
     },
   },
