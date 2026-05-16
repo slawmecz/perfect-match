@@ -17,7 +17,7 @@ export const site = {
     eyebrow: "Biuro Matrymonialne Magnes",
     title: "Kojarzymy do pozytywnego skutku.",
     subtitle:
-      "Profesjonalne biuro matrymonialne z 23-letnim doświadczeniem. Pomagamy znaleźć drugą połówkę – z pełną dyskrecją i indywidualnym podejściem.",
+      "Profesjonalne biuro matrymonialne\nz 23-letnim doświadczeniem. Pomagamy znaleźć drugą połówkę – z pełną dyskrecją i indywidualnym podejściem.",
     primaryCta: {
       label: "Wypełnij ankietę zgłoszeniową",
       href: "https://matrymonialne24.pl/ankieta/",
@@ -50,7 +50,7 @@ export const site = {
     },
     {
       title: "Więcej przywilejów",
-      body: "Im wyższy pakiet usług wybierzesz, tym masz więcej przywilejów.",
+      body: "Im wyższy pakiet usług wybierzesz,\ntym masz więcej przywilejów.",
       featured: false,
     },
     {

@@ -5,6 +5,25 @@ import { Reveal } from "./Reveal";
 import { site } from "@/content/site";
 import { asset, noOrphans } from "@/lib/utils";
 
+function HeroSubtitle({ text }: { text: string }) {
+  const lines = text.split("\n");
+  if (lines.length === 1) {
+    return <>{noOrphans(text)}</>;
+  }
+
+  return (
+    <>
+      {lines.map((line, index) => (
+        <span key={index}>
+          {index > 0 && <br className="sm:hidden" aria-hidden />}
+          {index > 0 && <span className="hidden sm:inline"> </span>}
+          {noOrphans(line)}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export function Hero() {
   return (
     <section
@@ -44,7 +63,7 @@ export function Hero() {
 
           <Reveal delay={160}>
             <p className="mt-6 max-w-3xl text-balance text-lg leading-relaxed text-brand-ink/80 sm:text-xl md:text-2xl">
-              {noOrphans(site.hero.subtitle)}
+              <HeroSubtitle text={site.hero.subtitle} />
             </p>
           </Reveal>
 

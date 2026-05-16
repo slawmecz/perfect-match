@@ -19,6 +19,25 @@ function renderEmphasis(text: string) {
   });
 }
 
+function renderPromiseBody(body: string) {
+  const lines = body.split("\n");
+  if (lines.length === 1) {
+    return renderEmphasis(body);
+  }
+
+  return (
+    <>
+      {lines.map((line, index) => (
+        <span key={index}>
+          {index > 0 && <br className="sm:hidden" aria-hidden />}
+          {index > 0 && <span className="hidden sm:inline"> </span>}
+          {renderEmphasis(line)}
+        </span>
+      ))}
+    </>
+  );
+}
+
 export function Promises() {
   return (
     <section
@@ -95,7 +114,7 @@ export function Promises() {
                   promise.featured ? "text-white/95" : "text-brand-ink/80",
                 )}
               >
-                {renderEmphasis(promise.body)}
+                {renderPromiseBody(promise.body)}
               </p>
 
               {promise.featured && (
