@@ -81,7 +81,7 @@ export function Hero() {
                 width={36}
                 height={30}
                 aria-hidden
-                className="h-6 w-[1.9rem] shrink-0 translate-x-1 translate-y-[6px] object-contain sm:h-8 sm:w-[2.25rem] sm:translate-x-1.5 sm:translate-y-[7px]"
+                className="h-8 w-[2.35rem] shrink-0 translate-x-1 translate-y-[7px] object-contain sm:h-9 sm:w-[2.65rem] sm:translate-x-1.5 sm:translate-y-[8px]"
               />
               {noOrphans(site.contact.coverage)}
             </p>
