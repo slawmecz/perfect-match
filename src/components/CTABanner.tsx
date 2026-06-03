@@ -1,4 +1,4 @@
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight, Magnet } from "lucide-react";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { site } from "@/content/site";
@@ -21,7 +21,7 @@ export function CTABanner() {
 
             <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
-                <Sparkles className="h-4 w-4" aria-hidden />
+                <Magnet className="h-4 w-4" aria-hidden />
                 {site.brand.shortName}
               </span>
 

@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
 import { site } from "@/content/site";
-import { SITE_URL } from "@/lib/utils";
+import { SITE_URL, formatYearsCount } from "@/lib/utils";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 const title = `${site.brand.name} – Profesjonalne kojarzenie par`;
-const description = `${site.brand.name}: kojarzymy do pozytywnego skutku. ${site.brand.yearsExperience} lat doświadczenia, pełna dyskrecja, indywidualne podejście. ${site.contact.coverage}.`;
+const description = `${site.brand.name}: kojarzymy do pozytywnego skutku. ${formatYearsCount(site.brand.yearsExperience)} doświadczenia, pełna dyskrecja, indywidualne podejście. ${site.contact.coverage}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

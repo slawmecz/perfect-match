@@ -11,6 +11,7 @@ export const site = {
   contact: {
     phone: "600 434 700",
     phoneHref: "tel:+48600434700",
+    contactPageHref: "https://matrymonialne24.pl/kontakt/",
     coverage: "Zasięg ogólnopolski",
   },
   hero: {
@@ -19,55 +20,42 @@ export const site = {
     subtitle:
       "Profesjonalne biuro matrymonialne\nz 23-letnim doświadczeniem. Pomagamy znaleźć drugą połówkę – z pełną dyskrecją i indywidualnym podejściem.",
     primaryCta: {
-      label: "Wypełnij ankietę zgłoszeniową",
-      href: "https://matrymonialne24.pl/ankieta/",
+      label: "Formularz kontaktowy",
+      href: "https://matrymonialne24.pl/kontakt/",
     },
     secondaryCta: {
       label: "Zadzwoń",
       href: "tel:+48600434700",
     },
+    tagline:
+      "Odpowiemy na każde pytanie i pomożemy wybrać pakiet usług\ndopasowany do Twoich potrzeb.",
   },
   promisesIntro: {
-    title: "Płacisz tylko raz, korzystasz z biura dowolnie długo.",
-    description:
-      "Sześć obietnic, które otrzymujesz wybierając Biuro Matrymonialne Magnes.",
+    eyebrow: "Jednorazowa inwestycja",
+    headline: "Co nas wyróżnia",
   },
   promises: [
     {
-      title: "Pomożemy Ci do skutku",
+      title: "Skuteczność",
       body: "Będziemy Ci pomagać tak długo, aż spełnimy Twoje oczekiwania.",
-      featured: false,
     },
     {
-      title: "Pozytywny skutek",
-      body: "Kojarzymy do pozytywnego skutku.",
-      featured: false,
-    },
-    {
-      title: "Płacisz tylko raz",
-      body: "Płacisz tylko raz – korzystasz z biura dowolnie długo.",
-      featured: true,
-    },
-    {
-      title: "Więcej przywilejów",
-      body: "Im wyższy pakiet usług wybierzesz,\ntym masz więcej przywilejów.",
-      featured: false,
-    },
-    {
-      title: "Gwarancja lojalności",
+      title: "Lojalność",
       body: "Nie usuniemy Twojej oferty do czasu, aż Ci pomożemy.",
-      featured: false,
     },
     {
-      title: "Szybkość, na którą zasługujesz",
-      body: "Postaramy się, abyś **jak najkrócej** korzystał z naszych usług.",
-      featured: false,
+      title: "Elastyczność",
+      body: "Im wyższy pakiet usług wybierzesz, tym masz więcej przywilejów.",
+    },
+    {
+      title: "Szybkość",
+      body: "Postaramy się, abyś **jak najkrócej** korzystał z naszych usług!",
     },
   ],
   ctaBanner: {
-    title: "Gotowy na pierwszy krok?",
+    title: "Gotowi na pierwszy krok?",
     description:
-      "Wypełnij krótką ankietę zgłoszeniową lub zadzwoń – odpowiemy na każde pytanie i pomożemy wybrać pakiet dopasowany do Twoich oczekiwań.",
+      "Opisz siebie i swoje oczekiwania, dodaj zdjęcie. Stworzymy Twoją fotoofertę.",
     primaryCta: {
       label: "Wypełnij ankietę",
       href: "https://matrymonialne24.pl/ankieta/",
@@ -87,7 +75,7 @@ export const site = {
       { title: "Wydarzenia", href: "https://matrymonialne24.pl/wydarzenia/" },
       { title: "Cennik", href: "https://matrymonialne24.pl/cennik/" },
       { title: "Promocje", href: "https://matrymonialne24.pl/promocje/" },
-      { title: "Dołącz do nas", href: "https://matrymonialne24.pl/ankieta/" },
+      { title: "Dołącz", href: "https://matrymonialne24.pl/ankieta/" },
     ],
   },
   faq: [

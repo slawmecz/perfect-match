@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Phone } from "lucide-react";
 import { Container } from "./Container";
+import { PhoneLink } from "./PhoneLink";
 import { site } from "@/content/site";
-import { asset, noOrphans } from "@/lib/utils";
+import { asset, noOrphans, formatYearsCount } from "@/lib/utils";
 
 export function Header() {
   return (
@@ -30,15 +31,15 @@ export function Header() {
             />
             <Image
               src={asset("/lata-istnienia.svg")}
-              alt={`${site.brand.yearsExperience} lat istnienia biura`}
+              alt={`${formatYearsCount(site.brand.yearsExperience)} istnienia biura`}
               width={200}
               height={232}
               className="h-auto w-32 lg:w-40 xl:w-44"
             />
           </div>
 
-          <a
-            href={site.contact.phoneHref}
+          <PhoneLink
+            layout="flex"
             className="group flex items-center gap-2 rounded-full bg-white px-4 py-2 text-base font-semibold text-brand-purple-deep shadow-[0_4px_12px_-4px_rgba(116,86,153,0.25)] ring-1 ring-brand-purple/15 transition hover:shadow-[0_8px_20px_-6px_rgba(226,0,122,0.35)] hover:ring-brand-pink/40 sm:text-lg md:px-5 md:py-2.5"
           >
             <Phone className="h-4 w-4 text-brand-pink transition group-hover:scale-110 sm:h-5 sm:w-5" aria-hidden />
@@ -46,7 +47,7 @@ export function Header() {
             <span className="hidden text-sm font-medium text-brand-gray sm:inline md:hidden lg:inline">
               · {noOrphans(site.contact.coverage)}
             </span>
-          </a>
+          </PhoneLink>
         </div>
 
         <div className="mt-6 flex items-center justify-center gap-6 md:hidden">
@@ -59,7 +60,7 @@ export function Header() {
           />
           <Image
             src={asset("/lata-istnienia.svg")}
-            alt={`${site.brand.yearsExperience} lat istnienia biura`}
+            alt={`${formatYearsCount(site.brand.yearsExperience)} istnienia biura`}
             width={200}
             height={232}
             className="h-auto w-28 sm:w-32"

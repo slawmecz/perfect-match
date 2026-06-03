@@ -1,11 +1,18 @@
 import Image from "next/image";
 import { ArrowRight, Phone } from "lucide-react";
 import { Container } from "./Container";
+import { PhoneLink } from "./PhoneLink";
 import { Reveal } from "./Reveal";
 import { site } from "@/content/site";
 import { asset, noOrphans } from "@/lib/utils";
 
-function HeroSubtitle({ text }: { text: string }) {
+function HeroSubtitle({
+  text,
+  lineBreak = "mobile",
+}: {
+  text: string;
+  lineBreak?: "mobile" | "all";
+}) {
   const lines = text.split("\n");
   if (lines.length === 1) {
     return <>{noOrphans(text)}</>;
@@ -15,14 +22,24 @@ function HeroSubtitle({ text }: { text: string }) {
     <>
       {lines.map((line, index) => (
         <span key={index}>
-          {index > 0 && <br className="sm:hidden" aria-hidden />}
-          {index > 0 && <span className="hidden sm:inline"> </span>}
+          {index > 0 && (
+            <br
+              className={lineBreak === "all" ? undefined : "sm:hidden"}
+              aria-hidden={lineBreak === "all"}
+            />
+          )}
+          {index > 0 && lineBreak === "mobile" && (
+            <span className="hidden sm:inline"> </span>
+          )}
           {noOrphans(line)}
         </span>
       ))}
     </>
   );
 }
+
+const heroPillClassName =
+  "inline-flex h-10 items-center gap-2 rounded-full bg-white/80 px-4 text-sm font-semibold uppercase tracking-[0.18em] text-brand-purple-deep shadow-sm ring-1 ring-brand-purple/10 sm:h-11 sm:text-[15px]";
 
 export function Hero() {
   return (
@@ -42,7 +59,7 @@ export function Hero() {
       <Container>
         <div className="mx-auto flex max-w-5xl flex-col items-center text-center">
           <Reveal>
-            <p className="inline-flex items-center gap-2 rounded-full bg-white/80 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-brand-purple-deep shadow-sm ring-1 ring-brand-purple/10 sm:text-[15px]">
+            <p className={heroPillClassName}>
               <Image
                 src={asset("/slice1.svg")}
                 alt=""
@@ -52,6 +69,20 @@ export function Hero() {
                 className="h-4 w-4"
               />
               {noOrphans(site.hero.eyebrow)}
+            </p>
+          </Reveal>
+
+          <Reveal delay={40}>
+            <p className={`mt-3 ${heroPillClassName}`}>
+              <Image
+                src={asset("/poland-map.svg")}
+                alt=""
+                width={36}
+                height={30}
+                aria-hidden
+                className="h-6 w-[1.9rem] shrink-0 translate-x-1 translate-y-[6px] object-contain sm:h-8 sm:w-[2.25rem] sm:translate-x-1.5 sm:translate-y-[7px]"
+              />
+              {noOrphans(site.contact.coverage)}
             </p>
           </Reveal>
 
@@ -80,29 +111,20 @@ export function Hero() {
                 <ArrowRight className="h-5 w-5 transition group-hover:translate-x-1" aria-hidden />
               </a>
 
-              <a
-                href={site.hero.secondaryCta.href}
+              <PhoneLink
                 className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-4 text-base font-bold text-brand-purple-deep ring-2 ring-brand-purple/30 transition hover:-translate-y-0.5 hover:bg-brand-purple/5 hover:ring-brand-pink/50 sm:w-auto sm:gap-3 sm:px-7 sm:text-lg"
               >
                 <Phone className="h-5 w-5 shrink-0 text-brand-pink" aria-hidden />
                 <span className="whitespace-nowrap">
                   {site.hero.secondaryCta.label}: {site.contact.phone}
                 </span>
-              </a>
+              </PhoneLink>
             </div>
           </Reveal>
 
           <Reveal delay={320}>
-            <p className="mt-6 text-sm font-medium text-brand-gray sm:text-base">
-              <span className="block sm:inline">
-                {noOrphans(
-                  `${site.contact.coverage} · ${site.brand.yearsExperience} lat doświadczenia`,
-                )}
-              </span>
-              <span className="hidden sm:inline"> · </span>
-              <span className="mt-1 block sm:mt-0 sm:inline">
-                {noOrphans("Pełna dyskrecja")}
-              </span>
+            <p className="mt-6 max-w-2xl text-sm font-medium leading-relaxed text-brand-gray sm:text-base">
+              <HeroSubtitle text={site.hero.tagline} lineBreak="all" />
             </p>
           </Reveal>
         </div>

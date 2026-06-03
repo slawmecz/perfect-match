@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { Phone } from "lucide-react";
 import { Container } from "./Container";
+import { PhoneLink } from "./PhoneLink";
 import { site } from "@/content/site";
-import { asset, noOrphans } from "@/lib/utils";
+import { asset, noOrphans, formatYearsCount } from "@/lib/utils";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -29,7 +30,7 @@ export function Footer() {
             <p className="max-w-sm text-center text-base text-brand-ink/70 md:text-left">
               <span className="block sm:inline">
                 {noOrphans(
-                  `${site.brand.yearsExperience} lat doświadczenia w kojarzeniu par.`,
+                  `${formatYearsCount(site.brand.yearsExperience)} doświadczenia w kojarzeniu par.`,
                 )}
               </span>{" "}
               <span className="mt-1 block sm:mt-0 sm:inline">
@@ -39,13 +40,10 @@ export function Footer() {
           </div>
 
           <div className="flex flex-col items-center gap-3 md:items-end">
-            <a
-              href={site.contact.phoneHref}
-              className="inline-flex items-center gap-2 text-lg font-bold text-brand-purple-deep transition hover:text-brand-pink sm:text-xl"
-            >
+            <PhoneLink className="inline-flex items-center gap-2 text-lg font-bold text-brand-purple-deep transition hover:text-brand-pink sm:text-xl">
               <Phone className="h-5 w-5 text-brand-pink" aria-hidden />
               {site.contact.phone}
-            </a>
+            </PhoneLink>
             <a
               href={`https://${site.brand.officialDomain}/`}
               target="_blank"
