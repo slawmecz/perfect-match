@@ -7,9 +7,9 @@ import { asset, noOrphans, formatYearsCount } from "@/lib/utils";
 
 export function Header() {
   return (
-    <header className="relative pt-6 pb-4 sm:pt-8 sm:pb-6 lg:pt-10">
+    <header className="relative pt-8 pb-4 sm:pt-8 sm:pb-6 lg:pt-10">
       <Container>
-        <div className="flex flex-col items-center gap-5 md:flex-row md:items-center md:justify-between md:gap-8">
+        <div className="flex flex-col items-center gap-6 md:flex-row md:items-center md:justify-between md:gap-8">
           <div className="flex w-full items-center justify-center md:w-auto md:justify-start">
             <Image
               src={asset("/Logo.svg")}
