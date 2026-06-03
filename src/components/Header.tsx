@@ -36,6 +36,13 @@ export function Header() {
               height={232}
               className="h-auto w-32 lg:w-40 xl:w-44"
             />
+            <Image
+              src={asset("/zarejestrowane-osoby-medal.svg")}
+              alt="Ponad 500 zarejestrowanych osób"
+              width={200}
+              height={232}
+              className="h-auto w-32 lg:w-40 xl:w-44"
+            />
           </div>
 
           <PhoneLink
@@ -61,6 +68,13 @@ export function Header() {
           <Image
             src={asset("/lata-istnienia.svg")}
             alt={`${formatYearsCount(site.brand.yearsExperience)} istnienia biura`}
+            width={200}
+            height={232}
+            className="h-auto w-28 sm:w-32"
+          />
+          <Image
+            src={asset("/zarejestrowane-osoby-medal.svg")}
+            alt="Ponad 500 zarejestrowanych osób"
             width={200}
             height={232}
             className="h-auto w-28 sm:w-32"

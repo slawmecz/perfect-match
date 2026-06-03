@@ -13,10 +13,10 @@ export function CTABanner() {
     >
       <Container>
         <Reveal>
-          <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--brand-gradient)] px-6 py-12 text-white shadow-[0_30px_60px_-30px_rgba(116,86,153,0.55),0_18px_40px_-20px_rgba(226,0,122,0.4)] sm:px-12 sm:py-16 lg:px-20 lg:py-20">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[image:var(--brand-gradient-cta)] px-6 py-12 text-white shadow-[0_30px_60px_-30px_rgba(56,32,88,0.55),0_18px_40px_-20px_rgba(86,56,130,0.45)] sm:px-12 sm:py-16 lg:px-20 lg:py-20">
             <div aria-hidden className="pointer-events-none absolute inset-0">
-              <div className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-white/15 blur-3xl" />
-              <div className="absolute -bottom-32 -right-10 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+              <div className="absolute -top-24 -left-16 h-72 w-72 rounded-full bg-white/8 blur-3xl" />
+              <div className="absolute -bottom-20 -right-8 h-96 w-96 rounded-full bg-brand-pink-deep/15 blur-3xl" />
             </div>
 
             <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">

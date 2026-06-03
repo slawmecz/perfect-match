@@ -20,6 +20,24 @@
     var(--color-brand-purple) 0%,
     var(--color-brand-pink) 100%
   );
+  --brand-gradient-cta:
+    radial-gradient(
+      ellipse 95% 85% at 88% 92%,
+      rgba(180, 0, 96, 0.5) 0%,
+      rgba(130, 45, 110, 0.22) 36%,
+      transparent 68%
+    ),
+    radial-gradient(
+      ellipse 70% 60% at 12% 18%,
+      rgba(116, 86, 153, 0.28) 0%,
+      transparent 72%
+    ),
+    linear-gradient(
+      150deg,
+      var(--color-brand-purple-deep) 0%,
+      var(--color-brand-purple) 55%,
+      rgb(94 50 118) 100%
+    );
   --brand-gradient-soft: linear-gradient(
     135deg,
     rgba(116, 86, 153, 0.08) 0%,

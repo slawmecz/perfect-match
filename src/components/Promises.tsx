@@ -43,7 +43,7 @@ export function Promises() {
     <section
       id="promises"
       aria-labelledby="promises-title"
-      className="relative py-16 sm:py-20 lg:py-28"
+      className="relative py-16 sm:py-20 lg:pt-20 lg:pb-28"
     >
       <Container>
         <div className="mx-auto max-w-4xl text-center">
