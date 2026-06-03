@@ -61,6 +61,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
+  text-wrap: pretty;
 }
 
 @media (min-width: 768px) {

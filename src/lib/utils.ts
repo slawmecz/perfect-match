@@ -15,7 +15,9 @@ export function asset(path: string): string {
   return `${BASE_PATH}${normalized}`;
 }
 
-const ORPHAN_RE = /(?<=^|\s)([\p{L}\p{N}]{1,2})[ \t]+/gu;
+// Bind 1–3 character words to the following word so they do not hang at line end.
+// Skip when the short word ends a sentence (only punctuation follows).
+const ORPHAN_RE = /(?<=^|\s)([\p{L}\p{N}]{1,3})\s+(?=[\p{L}\p{N}])/gu;
 
 export function noOrphans(text: string): string {
   return text.replace(ORPHAN_RE, "$1\u00A0");
