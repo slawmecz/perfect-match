@@ -20,7 +20,7 @@
         <textPath xlink:href="#medal-number-arc" startOffset="50%" text-anchor="middle">&gt;500</textPath>
       </text>
       <text class="medal-label" x="287.615" y="352">ZAREJESTROWANYCH</text>
-      <text class="medal-label" x="287.615" y="390">OSÓB</text>
+      <text class="medal-label" x="287.615" y="394">OSÓB</text>
     </g>
   </g>
 </svg>

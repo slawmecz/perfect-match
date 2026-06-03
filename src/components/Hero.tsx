@@ -11,26 +11,27 @@ function HeroSubtitle({
   lineBreak = "mobile",
 }: {
   text: string;
-  lineBreak?: "mobile" | "all";
+  lineBreak?: "mobile" | "all" | "desktop";
 }) {
   const lines = text.split("\n");
   if (lines.length === 1) {
     return <>{noOrphans(text)}</>;
   }
 
+  const breakClassName =
+    lineBreak === "all" ? undefined : lineBreak === "desktop" ? "hidden sm:block" : "sm:hidden";
+
   return (
     <>
       {lines.map((line, index) => (
         <span key={index}>
           {index > 0 && (
-            <br
-              className={lineBreak === "all" ? undefined : "sm:hidden"}
-              aria-hidden={lineBreak === "all"}
-            />
+            <br className={breakClassName} aria-hidden={lineBreak !== "mobile"} />
           )}
           {index > 0 && lineBreak === "mobile" && (
             <span className="hidden sm:inline"> </span>
           )}
+          {index > 0 && lineBreak === "desktop" && <span className="sm:hidden"> </span>}
           {noOrphans(line)}
         </span>
       ))}
@@ -116,7 +117,7 @@ export function Hero() {
               >
                 <Phone className="h-5 w-5 shrink-0 text-brand-pink" aria-hidden />
                 <span className="whitespace-nowrap">
-                  {site.hero.secondaryCta.label}: {site.contact.phone}
+                  {noOrphans(`${site.hero.secondaryCta.label}: ${site.contact.phone}`)}
                 </span>
               </PhoneLink>
             </div>
@@ -124,7 +125,7 @@ export function Hero() {
 
           <Reveal delay={320}>
             <p className="mt-6 max-w-2xl text-sm font-medium leading-relaxed text-brand-gray sm:text-base">
-              <HeroSubtitle text={site.hero.tagline} lineBreak="all" />
+              <HeroSubtitle text={site.hero.tagline} lineBreak="desktop" />
             </p>
           </Reveal>
         </div>
