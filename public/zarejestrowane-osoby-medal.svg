@@ -3,10 +3,10 @@
   <defs>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Manrope:wght@495;500;600&amp;display=swap");
-      .medal-number { font-family: "Manrope", "Segoe UI", Arial, sans-serif; font-size: 142px; font-weight: 495; letter-spacing: -0.03em; }
+      .medal-number { font-family: "Manrope", "Segoe UI", Arial, sans-serif; font-size: 134px; font-weight: 500; letter-spacing: -0.03em; }
       .medal-label { font-family: "Manrope", "Segoe UI", Arial, sans-serif; font-size: 31px; font-weight: 500; letter-spacing: 0.12em; }
     </style>
-    <path id="medal-number-arc" d="M 152 300 A 3200 3200 0 0 1 423 300" fill="none"></path>
+    <path id="medal-number-arc" d="M 152 302 A 1700 1700 0 0 1 423 302" fill="none"></path>
   </defs>
   <g>
     <g>
@@ -17,7 +17,7 @@
     <circle cx="287.615" cy="296.191" r="204.101" style="fill:#72569c;"></circle>
     <g fill="#ffffff" text-anchor="middle">
       <text class="medal-number">
-        <textPath xlink:href="#medal-number-arc" startOffset="50%" text-anchor="middle">&gt;500</textPath>
+        <textPath xlink:href="#medal-number-arc" startOffset="48%" text-anchor="middle">&gt;500</textPath>
       </text>
       <text class="medal-label" x="287.615" y="352">ZAREJESTROWANYCH</text>
       <text class="medal-label" x="287.615" y="394">OSÓB</text>
