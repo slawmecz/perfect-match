@@ -6,35 +6,47 @@ import { Reveal } from "./Reveal";
 import { site } from "@/content/site";
 import { asset, noOrphans } from "@/lib/utils";
 
+type LineBreakMode = "mobile" | "all" | "desktop";
+
+function getBreakClassName(mode: LineBreakMode) {
+  if (mode === "all") return undefined;
+  if (mode === "desktop") return "hidden sm:block";
+  return "sm:hidden";
+}
+
 function HeroSubtitle({
   text,
   lineBreak = "mobile",
+  lineBreaks,
 }: {
   text: string;
-  lineBreak?: "mobile" | "all" | "desktop";
+  lineBreak?: LineBreakMode;
+  lineBreaks?: LineBreakMode[];
 }) {
   const lines = text.split("\n");
   if (lines.length === 1) {
     return <>{noOrphans(text)}</>;
   }
 
-  const breakClassName =
-    lineBreak === "all" ? undefined : lineBreak === "desktop" ? "hidden sm:block" : "sm:hidden";
-
   return (
     <>
-      {lines.map((line, index) => (
-        <span key={index}>
-          {index > 0 && (
-            <br className={breakClassName} aria-hidden={lineBreak !== "mobile"} />
-          )}
-          {index > 0 && lineBreak === "mobile" && (
-            <span className="hidden sm:inline"> </span>
-          )}
-          {index > 0 && lineBreak === "desktop" && <span className="sm:hidden"> </span>}
-          {noOrphans(line)}
-        </span>
-      ))}
+      {lines.map((line, index) => {
+        const mode = lineBreaks?.[index - 1] ?? lineBreak;
+        const breakClassName = getBreakClassName(mode);
+
+        return (
+          <span key={index}>
+            {index > 0 && (
+              <br className={breakClassName} aria-hidden={mode !== "mobile"} />
+            )}
+            {index > 0 && mode === "mobile" && (
+              <span className="hidden sm:inline"> </span>
+            )}
+            {index > 0 && mode === "desktop" && <span className="sm:hidden"> </span>}
+            {noOrphans(line)}
+          </span>
+        );
+      })}
     </>
   );
 }
@@ -125,7 +137,10 @@ export function Hero() {
 
           <Reveal delay={320}>
             <p className="mt-6 max-w-2xl text-sm font-medium leading-relaxed text-brand-gray sm:text-base">
-              <HeroSubtitle text={site.hero.tagline} lineBreak="desktop" />
+              <HeroSubtitle
+                text={site.hero.tagline}
+                lineBreaks={["mobile", "desktop"]}
+              />
             </p>
           </Reveal>
         </div>

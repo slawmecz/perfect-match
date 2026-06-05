@@ -59,6 +59,9 @@ export function Promises() {
             >
               {noOrphans(site.promisesIntro.headline)}
             </h2>
+            <p className="mt-4 text-lg font-semibold text-brand-purple-deep sm:text-xl">
+              {noOrphans(site.promisesIntro.subheadline)}
+            </p>
           </Reveal>
         </div>
 

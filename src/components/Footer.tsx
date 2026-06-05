@@ -57,7 +57,12 @@ export function Footer() {
 
         <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-brand-purple/10 pt-6 text-sm text-brand-gray sm:flex-row">
           <p className="w-full text-center sm:w-auto sm:text-left">
-            {noOrphans(`© ${year} ${site.brand.name}. Wszelkie prawa zastrzeżone.`)}
+            <span className="block sm:inline">
+              {noOrphans(`© ${year} ${site.brand.name}.`)}
+            </span>{" "}
+            <span className="mt-1 block sm:mt-0 sm:inline">
+              {noOrphans("Wszelkie prawa zastrzeżone.")}
+            </span>
           </p>
           <p>
             <span className="font-semibold text-brand-purple-deep">{site.brand.domain}</span>

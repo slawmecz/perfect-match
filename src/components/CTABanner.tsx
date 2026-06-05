@@ -1,8 +1,46 @@
-import { ArrowRight, Magnet } from "lucide-react";
+import { ArrowRight, Heart } from "lucide-react";
 import { Container } from "./Container";
 import { Reveal } from "./Reveal";
 import { site } from "@/content/site";
 import { noOrphans } from "@/lib/utils";
+
+function LongArrowLeft({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 32 8"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M2 4H28M8 1L2 4L8 7"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function LongArrowRight({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 32 8"
+      fill="none"
+      aria-hidden
+    >
+      <path
+        d="M30 4H4M24 1L30 4L24 7"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
 
 export function CTABanner() {
   return (
@@ -21,7 +59,14 @@ export function CTABanner() {
 
             <div className="relative mx-auto flex max-w-3xl flex-col items-center text-center">
               <span className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold uppercase tracking-[0.18em] text-white backdrop-blur">
-                <Magnet className="h-4 w-4" aria-hidden />
+                <span className="inline-flex items-center gap-1.5" aria-hidden>
+                  <Heart className="h-4 w-4 fill-current" strokeWidth={2} />
+                  <span className="inline-flex w-5 flex-col items-center gap-0.5">
+                    <LongArrowLeft className="h-2 w-full" />
+                    <LongArrowRight className="h-2 w-full" />
+                  </span>
+                  <Heart className="h-4 w-4 fill-current" strokeWidth={2} />
+                </span>
                 {site.brand.shortName}
               </span>
 

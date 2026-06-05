@@ -1,3 +1,10 @@
+const CONTACT_PAGE = "https://matrymonialne24.pl/kontakt/" as const;
+const CONTACT_FORM_ANCHOR = "wpcf7-f8213-p7639-o1" as const;
+const CONTACT_FORM_HREF = `${CONTACT_PAGE}#${CONTACT_FORM_ANCHOR}` as const;
+
+/** Paste in matrymonialne24.pl → Divi → Theme Customizer → Custom CSS */
+export const CONTACT_FORM_SCROLL_MARGIN_CSS = `#${CONTACT_FORM_ANCHOR} { scroll-margin-top: 24px; }`;
+
 export const site = {
   brand: {
     name: "Biuro Matrymonialne Magnes",
@@ -11,28 +18,31 @@ export const site = {
   contact: {
     phone: "600 434 700",
     phoneHref: "tel:+48600434700",
-    contactPageHref: "https://matrymonialne24.pl/kontakt/",
+    contactPageHref: CONTACT_PAGE,
+    contactFormHref: CONTACT_FORM_HREF,
+    contactFormScrollMarginPx: 24,
     coverage: "Zasięg ogólnopolski",
   },
   hero: {
     eyebrow: "Biuro Matrymonialne Magnes",
     title: "Kojarzymy do pozytywnego skutku.",
     subtitle:
-      "Profesjonalne biuro matrymonialne\nz 23-letnim doświadczeniem. Pomagamy znaleźć drugą połówkę – z pełną dyskrecją i indywidualnym podejściem.",
+      "Profesjonalne biuro matrymonialne\nz 23-letnim doświadczeniem.\nPomagamy znaleźć drugą połówkę\n– z pełną dyskrecją i indywidualnym podejściem.",
     primaryCta: {
       label: "Formularz kontaktowy",
-      href: "https://matrymonialne24.pl/kontakt/",
+      href: CONTACT_FORM_HREF,
     },
     secondaryCta: {
       label: "Zadzwoń",
       href: "tel:+48600434700",
     },
     tagline:
-      "Odpowiemy na każde pytanie i pomożemy wybrać pakiet usług\ndopasowany do Twoich potrzeb.",
+      "Odpowiemy na każde pytanie i pomożemy wybrać\npakiet usług\ndopasowany do Twoich potrzeb.",
   },
   promisesIntro: {
     eyebrow: "Jednorazowa inwestycja",
-    headline: "Co nas wyróżnia",
+    headline: "Płacisz tylko raz, korzystasz z biura dowolnie długo.",
+    subheadline: "Co nas wyróżnia:",
   },
   promises: [
     {
