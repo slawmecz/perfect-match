@@ -27,7 +27,7 @@ export const site = {
     eyebrow: "Biuro Matrymonialne Magnes",
     title: "Kojarzymy do pozytywnego skutku.",
     subtitle:
-      "Profesjonalne biuro matrymonialne\nz 23-letnim doświadczeniem.\nPomagamy znaleźć drugą połówkę\n– z pełną dyskrecją i indywidualnym podejściem.",
+      "Profesjonalne biuro matrymonialne\nz 23-letnim doświadczeniem.\nPomagamy znaleźć drugą połówkę\n– z indywidualnym podejściem\ni pełną dyskrecją.",
     primaryCta: {
       label: "Formularz kontaktowy",
       href: CONTACT_FORM_HREF,
@@ -59,7 +59,7 @@ export const site = {
     },
     {
       title: "Szybkość",
-      body: "Postaramy się, abyś **jak najkrócej** korzystał z naszych usług!",
+      body: "Postaramy się, abyś **jak najkrócej** korzystał/a z naszych usług!",
     },
   ],
   ctaBanner: {
