@@ -47,7 +47,7 @@ export function CTABanner() {
     <section
       id="cta"
       aria-labelledby="cta-title"
-      className="py-12 sm:py-16 lg:py-20"
+      className="pt-6 pb-6 sm:pt-10 sm:pb-14 lg:pt-14 lg:pb-16"
     >
       <Container>
         <Reveal>

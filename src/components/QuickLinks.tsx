@@ -9,7 +9,7 @@ export function QuickLinks() {
     <section
       id="quick-links"
       aria-labelledby="quick-links-title"
-      className="py-12 sm:py-16 lg:py-20"
+      className="pt-6 pb-6 sm:pt-12 sm:pb-14 lg:pt-16 lg:pb-16"
     >
       <Container>
         <div className="mx-auto max-w-3xl text-center">
