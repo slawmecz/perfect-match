@@ -22,6 +22,13 @@ export const site = {
     contactFormHref: CONTACT_FORM_HREF,
     contactFormScrollMarginPx: 24,
     coverage: "Zasięg ogólnopolski",
+    /** Used in JSON-LD only — not shown on the page */
+    address: {
+      streetAddress: "ul. Czysta 5",
+      postalCode: "87-700",
+      addressLocality: "Aleksandrów Kujawski",
+      addressCountry: "PL",
+    },
   },
   hero: {
     eyebrow: "Biuro Matrymonialne Magnes",
@@ -88,28 +95,6 @@ export const site = {
       { title: "Dołącz", href: "https://matrymonialne24.pl/ankieta/" },
     ],
   },
-  faq: [
-    {
-      question: "Co oznacza „kojarzenie do pozytywnego skutku”?",
-      answer:
-        "Pracujemy z Tobą tak długo, aż znajdziemy partnera, który spełni Twoje oczekiwania. Nie usuwamy Twojej oferty, dopóki nie pomożemy.",
-    },
-    {
-      question: "Czy płacę za każde spotkanie?",
-      answer:
-        "Nie. Płacisz jeden raz, wybierając pakiet, a z biura korzystasz dowolnie długo – aż do skutku.",
-    },
-    {
-      question: "Czy zachowam pełną anonimowość?",
-      answer:
-        "Tak. Dyskrecja to nasz priorytet. Twoje dane i zdjęcia udostępniamy wyłącznie za Twoją zgodą.",
-    },
-    {
-      question: "Dla kogo jest Biuro Matrymonialne Magnes?",
-      answer:
-        "Pomagamy osobom w każdym wieku – również samotnym paniom i panom 50+, 60+. Indywidualne podejście, 23 lata doświadczenia, zasięg ogólnopolski.",
-    },
-  ],
 } as const;
 
 export type SiteContent = typeof site;

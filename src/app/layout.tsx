@@ -106,7 +106,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     foundingDate: String(site.brand.foundedYear),
     address: {
       "@type": "PostalAddress",
-      addressCountry: "PL",
+      streetAddress: site.contact.address.streetAddress,
+      postalCode: site.contact.address.postalCode,
+      addressLocality: site.contact.address.addressLocality,
+      addressCountry: site.contact.address.addressCountry,
     },
     areaServed: {
       "@type": "Country",
@@ -146,19 +149,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     publisher: { "@type": "Organization", name: site.brand.name },
   };
 
-  const faqSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: site.faq.map((item) => ({
-      "@type": "Question",
-      name: item.question,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.answer,
-      },
-    })),
-  };
-
   return (
     <html lang="pl" className={manrope.variable}>
       <body className="antialiased">
@@ -182,10 +172,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </body>
     </html>
