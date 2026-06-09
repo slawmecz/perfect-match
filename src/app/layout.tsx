@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
 import { Manrope } from "next/font/google";
+import Script from "next/script";
 import { site } from "@/content/site";
 import { SITE_URL, formatYearsCount } from "@/lib/utils";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = process.env.NEXT_PUBLIC_GA_ID || "G-4JRS7BGB0M";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -152,6 +155,36 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pl" className={manrope.variable}>
       <body className="antialiased">
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            const isKojarzeniePar =
+              window.location.hostname === 'kojarzeniepar.pl' ||
+              window.location.hostname === 'www.kojarzeniepar.pl';
+
+            if (isKojarzeniePar) {
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                anonymize_ip: true,
+                allow_google_signals: false,
+                allow_ad_personalization_signals: false,
+                cookie_flags: 'SameSite=None;Secure',
+                send_page_view: true,
+              });
+            } else {
+              gtag('config', '${GA_MEASUREMENT_ID}', {
+                send_page_view: true,
+              });
+            }
+          `}
+        </Script>
+
         <a
           href="#start"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-brand-purple-deep focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
